@@ -49,5 +49,5 @@ This project creates a chatbot that can extract key components from calibration 
 2. The chatbot will be available at http://localhost:8080.
 3. The Neo4j database can be accessed at http://localhost:7474. You can view the database with a simple command like:
    ```sh
-   MATCH (n) RETURN (n) on Neo4j Application;
+   MATCH (n) RETURN (n)
 
