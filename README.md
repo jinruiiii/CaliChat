@@ -10,7 +10,7 @@ This project creates a chatbot that can extract key components from calibration 
 ## Installation
 
 ### Prerequisites
-- Ensure you have [Docker]([https://www.docker.com/get-started](https://docs.docker.com/)) or [Podman](https://docs.podman.io/en/latest/) installed on your machine.
+- Ensure you have [Docker](https://docs.docker.com/) or [Podman](https://docs.podman.io/en/latest/) installed on your machine.
 
 ### Steps
 1. Clone the repository:
