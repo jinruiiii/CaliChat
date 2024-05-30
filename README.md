@@ -1,7 +1,7 @@
-# Calibration Certificate Key Extractor Chatbot
+# PCB Object Detection
 
 ## Description
-This project creates a chatbot that can extract key components from calibration certificates. The application is easy to use and is packaged in a Docker Compose format with two services: the actual application and a Neo4j database image pulled from Docker Hub.
+This project is an application designed to process PCB (Printed Circuit Board) images. By uploading PCB images to the application, the application can detect individual components and read text labels such as "R1" and "R2" on the PCB. The application is user-friendly and leverages advanced machine learning and OCR (Optical Character Recognition) techniques to provide results.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -10,7 +10,10 @@ This project creates a chatbot that can extract key components from calibration 
 ## Installation
 
 ### Prerequisites
-- Ensure you have [Docker](https://docs.docker.com/) or [Podman](https://docs.podman.io/en/latest/) installed on your machine.
+- Ensure you have the following dependencies.
+  1. dfasdfd
+  2. 2dsfsdafdas
+  3. 
 
 ### Steps
 1. Clone the repository:
@@ -42,4 +45,5 @@ This project creates a chatbot that can extract key components from calibration 
 3. The Neo4j database can be accessed at http://localhost:7474. You can view the database with a simple command like:
    ```sh
    MATCH (n) RETURN (n)
+4. Upload a calibration certificate located in the Calibration Dataset of the root directory to the chatbot located in localhost:8080 to test the application.
 
