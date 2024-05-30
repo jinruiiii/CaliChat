@@ -8,7 +8,6 @@ This project is an application designed to process PCB (Printed Circuit Board) i
 - [Usage](#usage)
 
 ## Installation
-- 
 ### Prerequisites
 - Ensure you have the following dependencies.
   1. PyTorch
