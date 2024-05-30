@@ -19,19 +19,19 @@ This project creates a chatbot that can extract key components from calibration 
    
 2. Create a .env file in the same directory as the docker-compose.yml file and add the following environment variables with your credentials:
    ```sh
-# Set Environment Variables for Chatbot Backbone Model
-OPENAI_API_KEY= 
-OPENAI_API_VERSION=
-OPENAI_API_TYPE= 
-OPENAI_ENDPOINT= 
-OPENAI_DEPLOYMENT_NAME= 
-
-# Set Environment Variables for Embedding Model
-OPENAI_API_KEY_EMBEDDING=
-OPENAI_API_VERSION_EMBEDDING= 
-OPENAI_API_TYPE_EMBEDDING= 
-OPENAI_ENDPOINT_EMBEDDING= 
-OPENAI_DEPLOYMENT_NAME_EMBEDDING= 
+   # Set Environment Variables for Chatbot Backbone Model
+   OPENAI_API_KEY= 
+   OPENAI_API_VERSION=
+   OPENAI_API_TYPE= 
+   OPENAI_ENDPOINT= 
+   OPENAI_DEPLOYMENT_NAME= 
+   
+   # Set Environment Variables for Embedding Model
+   OPENAI_API_KEY_EMBEDDING=
+   OPENAI_API_VERSION_EMBEDDING= 
+   OPENAI_API_TYPE_EMBEDDING= 
+   OPENAI_ENDPOINT_EMBEDDING= 
+   OPENAI_DEPLOYMENT_NAME_EMBEDDING= 
 
 3. Ensure the .env file is saved in the same directory as docker-compose.yml.
 
