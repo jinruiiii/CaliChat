@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  neo4j:
+    build: ./neo4j
+    restart: always
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - neo4jdata:/data
+      - neo4jlogs:/logs
+
+  app:
+    build: ./app
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - "8080:8080"
+
+volumes:
+  neo4jdata:
+  neo4jlogs:

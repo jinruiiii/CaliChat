@@ -1,0 +1,62 @@
+FROM python:3.10.3-slim-buster
+
+# Upgrade pip
+RUN pip install --no-cache-dir --upgrade pip
+
+# Update package list and install ca-certificates, unzip, libmagic-dev, poppler-utils, tesseract-ocr, libxml2-dev, libxslt1-dev, libgl1
+RUN apt-get update && apt-get install -y \
+    ca-certificates \
+    unzip \
+    libmagic-dev \
+    poppler-utils \
+    tesseract-ocr \
+    libxml2-dev \
+    libxslt1-dev \
+    libgl1 \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+
+# Create directory for CA certificates and copy DSOCA50.pem
+RUN mkdir -p /usr/local/share/ca-certificates
+COPY DSOCA50.pem /usr/local/share/ca-certificates/
+COPY DSOVisibilityCA.pem /usr/local/share/ca-certificates/
+
+# Convert DSOCA50.pem to DSOCA50.crt
+RUN mv /usr/local/share/ca-certificates/DSOCA50.pem /usr/local/share/ca-certificates/DSOCA50.crt
+RUN mv /usr/local/share/ca-certificates/DSOVisibilityCA.pem /usr/local/share/ca-certificates/DSOVisibilityCA.crt
+
+# Update CA certificates
+RUN update-ca-certificates
+
+# Copy and extract certbundle.zip
+COPY certbundle.zip /tmp/
+RUN unzip /tmp/certbundle.zip -d /tmp/
+
+# Set global certificate for pip
+RUN pip config set global.cert /tmp/certbundle.crt
+
+# Download Unstructured with PDF support
+RUN pip install unstructured[pdf]
+
+# Install sentence transformer
+RUN pip install -U sentence-transformers
+
+# Set working directory
+WORKDIR /app
+
+# Copy application files
+COPY . .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Install httpx with http2 support
+RUN pip install httpx[http2]
+
+RUN pip install requests==2.27.1
+
+# Expose port 8080
+EXPOSE 8080
+
+# Command to run the application
+CMD ["chainlit", "run", "app.py", "--host", "0.0.0.0", "--port", "8080", "-w"]

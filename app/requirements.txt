@@ -1,0 +1,10 @@
+langchain==0.1.5
+langchain-community==0.0.19
+langchain-openai==0.0.3
+openai==1.6.1
+chainlit==1.0.301
+neo4j==5.18.0
+filetype==1.2.0
+httpx==0.26.0
+unstructured==0.12.5
+pytesseract==0.3.10
