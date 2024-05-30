@@ -10,7 +10,7 @@ This project creates a chatbot that can extract key components from calibration 
 ## Installation
 
 ### Prerequisites
-- Ensure you have [Docker](https://www.docker.com/get-started) installed on your machine.
+- Ensure you have [Docker](https://www.docker.com/get-started) of [Podman](https://docs.podman.io/en/latest/) installed on your machine.
 
 ### Steps
 1. Clone the repository:
@@ -35,9 +35,13 @@ This project creates a chatbot that can extract key components from calibration 
 
 3. Ensure the .env file is saved in the same directory as docker-compose.yml.
 
-4. Start the application by running the following command:
+4. You can start the application using either Docker or Podman.
+   Docker
    ```sh
-   docker compose up
+      docker compose up
+   Podman
+   ```sh
+      podman compose up
 ## Usage
 1. After running docker compose up, the application will start and connect to the Neo4j database.
 2. The chatbot will be available at http://localhost:8080.
