@@ -35,13 +35,7 @@ This project creates a chatbot that can extract key components from calibration 
 
 3. Ensure the .env file is saved in the same directory as docker-compose.yml.
 
-4. You can start the application using either Docker or Podman.
-   Docker
-   ```sh
-      docker compose up
-   Podman
-   ```sh
-      podman compose up
+4. You can start the application using either Docker or Podman with the compose up command
 ## Usage
 1. After running docker compose up, the application will start and connect to the Neo4j database.
 2. The chatbot will be available at http://localhost:8080.
