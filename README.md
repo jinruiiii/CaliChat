@@ -1,29 +1,28 @@
-# PCB Object Detection
+# Model Training Directory
 
-## Description
-This project is an application designed to process PCB (Printed Circuit Board) images. By uploading PCB images to the application, the application can detect individual components and read text labels such as "R1" and "R2" on the PCB. The application is user-friendly and leverages advanced machine learning and OCR (Optical Character Recognition) techniques to provide results.
+## Purpose
+This directory is dedicated to the training of an object detection model specifically designed for identifying individual components on printed circuit boards (PCBs) and reading the text on them. The model used for object detection is Faster R-CNN, while the text recognition is handled by LLAVA1.6, a visual language model. Both tasks are optimized for GPU implementation to ensure efficient training and inference.
 
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
+## End-to-End Product Overview
 
-## Installation
-### Prerequisites
-- Ensure you have the following dependencies.
-  1. PyTorch
-  2. Flask
-  3. Pytesseract
-  4. PIL
-  5. Regex
+### 1. Model Training and Evaluation
+- **Notebook**: `pcb_component_recognition_train.ipynb`
+- **Description**: This notebook handles both training and evaluation of the Faster R-CNN model. It uses helper functions from `utils.ipynb` and saves the best model parameters to `best_model_final`.
 
-### Steps
-1. Clone the repository:
-   ```sh
-   git clone https://gitlab.ai-stack.dso/fjinrui/pcb.git
+### 2. Model Inference and Full Pipeline
+- **Notebook**: `client.ipynb`
+- **Description**: This notebook demonstrates the full process. It takes a PCB image as input, uses the trained Faster R-CNN model to detect components, and then uses the LLAVA1.6 model to predict the labels.
 
-2. You can start the application by running the command below in the root directory of this project.
-   ```sh
-   python app.py
-## Usage
-1. Upload an image of a PCB by clicking "Select Image".
-2. Click "Annotate Now" to get the results. 
+### 3. Helper Functions
+- **Notebook**: `utils.ipynb`
+- **Description**: Contains various helper functions used in 'pcb_component_recognition_train.ipynb'
+
+### 4. Dataset
+- **Folder**:`PCB`
+- **Description**: Contains the PCB Images used in training and testing.
+
+
+### Usage Instructions
+To run the notebooks and scripts, follow these steps:
+1. **Model Training and Evaluation**: Open and run `pcb_component_recognition_train.ipynb`
+2. **Model Inference and Full Pipeline**: Open and run `client.ipynb`
